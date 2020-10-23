@@ -41,7 +41,7 @@
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
         n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
       };
       if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
       n.queue = []; t = b.createElement(e); t.async = !0;
@@ -248,6 +248,7 @@
           data-smart-interaction-tags="clothes,shoes,leather,men">Sing up for newsletter</button>
         <button type="button" class="btn btn-secondary">Secondary</button>
         <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-primary" id="addToCartButton">Facebook Pixel - Add to Cart</button>
       </div>
       <!-- /.col-lg-9 -->
 
@@ -283,6 +284,12 @@
       }
     });
   </script> -->
+  <script type="text/javascript">
+    const button = document.getElementById('addToCartButton');
+    button.addEventListener('click', () => {
+      fbq('track', 'Purchase', { currency: "USD", value: 30.00 });
+    })
+  </script>
 </body>
 
 </html>
