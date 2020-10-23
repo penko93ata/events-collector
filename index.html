@@ -249,6 +249,8 @@
         <button type="button" class="btn btn-secondary">Secondary</button>
         <button type="button" class="btn btn-success">Success</button>
         <button type="button" class="btn btn-primary" id="addToCartButton">Facebook Pixel - Add to Cart</button>
+        <button type="button" class="btn btn-primary" id="customEvent">Facebook Pixel - Custom event with custom
+          property</button>
       </div>
       <!-- /.col-lg-9 -->
 
@@ -286,9 +288,13 @@
   </script> -->
   <script type="text/javascript">
     const button = document.getElementById('addToCartButton');
+    const button2 = document.getElementById('customEvent');
     button.addEventListener('click', () => {
       fbq('track', 'Purchase', { currency: "USD", value: 30.00 });
-    })
+    });
+    button2.addEventListener('click', () => {
+      fbq('trackCustom', { tags: ['clothes', 'mens', 'leather', 'jacket'] });
+    });
   </script>
 </body>
 
