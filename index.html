@@ -293,7 +293,7 @@
       fbq('track', 'Purchase', { currency: "USD", value: 30.00 });
     });
     button2.addEventListener('click', () => {
-      fbq('trackCustom', { tags: ['clothes', 'mens', 'leather', 'jacket'] });
+      fbq('trackCustom', 'collectTags', { tags: ['clothes', 'mens', 'leather', 'jacket'] });
     });
   </script>
 </body>
